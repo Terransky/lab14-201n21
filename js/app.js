@@ -15,14 +15,18 @@ Cart.prototype.addItem = function(product, quantity) {
     this.items.push(newItem);
   }
 
-  for (let i = 0; i < cart.items; i++) {
+  let itemFound = false;
+
+  for (let i = 0; i < cart.items.length; i++) {
     if (cart.items[i].product === newItem.product) {
       console.log(cart.items.indexOf(newItem.product));
       cart.items[cart.items.indexOf(newItem.product)] = newItem;
+      itemFound = true;
+      console.log(itemFound);
     } 
   }
-
-  if (newItem.product !== cart.items[cart.items.length - 1].product) {
+  console.log(itemFound);
+  if (itemFound === false) {
     this.items.push(newItem);
   }
   
