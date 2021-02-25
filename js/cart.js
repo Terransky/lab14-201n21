@@ -4,7 +4,7 @@
 // Create an event listener so that when the delete link is clicked, the removeItemFromCart method is invoked.
 var table = document.getElementById('cart');
 table.addEventListener('click', removeItemFromCart);
-var cart;
+var cart = [];
 
 function loadCart() {
   var cartItems = JSON.parse(localStorage.getItem('cart')) || [];
@@ -25,8 +25,14 @@ function clearCart() {}
 function showCart() {
 
   // TODO: Find the table body
+  let cartTable = document.getElementById('cart');
 
   // TODO: Iterate over the items in the cart
+
+  // for (let i in Cart) {
+  //   console.log(Cart[i]);
+  // }
+
   // TODO: Create a TR
   // TODO: Create a TD for the delete link, quantity,  and the item
   // TODO: Add the TR to the TBODY and each of the TD's to the TR
